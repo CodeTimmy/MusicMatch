@@ -17,4 +17,4 @@ This project is licensed under the GLP-3.0 License.
 - Use the same license
 
 #
-Server Manager  Copyright (C) 2026  CodeTimmy
+Music Match  Copyright (C) 2026  CodeTimmy
