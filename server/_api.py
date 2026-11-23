@@ -17,4 +17,6 @@ def start_api():
 
     server = HTTPServer(("0.0.0.0", 27021), Handler)
 
+    print("✔ Webserver started")
+    
     server.serve_forever()
