@@ -16,6 +16,6 @@ def spotify_download(playlist_url, output_file="playlist_songs.json"):
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=4, ensure_ascii=False)
         
-        print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.")
+        print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
 
         return output_data
