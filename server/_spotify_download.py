@@ -7,7 +7,7 @@ def spotify_download(playlist_url, output_file="playlist_songs.json"):
         playlist = client.get_playlist(playlist_url)
         
         # Nur die Songnamen extrahieren
-        song_names = [track.name for track in playlist.tracks]
+        song_names = [entry.track.name for entry in playlist.tracks]
         
         output_data = {"songs": song_names}
         
