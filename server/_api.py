@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 def start_api():
-    print("4")
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             response = "<Hello Wo"
@@ -15,11 +14,9 @@ def start_api():
 
         def log_message(self, format, *args):
             pass  # Keine Logs
-
-    print("19")
     
     server = HTTPServer(("0.0.0.0", 27021), Handler)
 
-    print("✔ Webserver started")
+    print("✔ Webserver started", flush=True)
     
     server.serve_forever()
