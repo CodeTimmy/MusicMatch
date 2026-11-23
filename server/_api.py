@@ -15,7 +15,7 @@ def start_api():
             parsed = urlparse(self.path)
             params = parse_qs(parsed.query)   # {"id": ["abc123"]}
 
-            if self.path.beginswith("/api/download"):
+            if self.path.startswith("/api/download"):
                 # Einzelnen Wert holen (mit Default, falls nicht vorhanden)
                 playlist_id = params.get("id", [None])[0]
 
