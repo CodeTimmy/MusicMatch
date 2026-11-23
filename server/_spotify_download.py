@@ -1,7 +1,7 @@
 import json
 from spotify_scraper import SpotifyClient
 
-def export_playlist_to_json(playlist_url, output_file="playlist_songs.json"):
+def spotify_download(playlist_url, output_file="playlist_songs.json"):
     with SpotifyClient() as client:
         playlist = client.get_playlist(playlist_url)
         
