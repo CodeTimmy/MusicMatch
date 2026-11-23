@@ -13,7 +13,7 @@ print("")
 print("")
 from _spotify_download import spotify_download
 
-PLAYLIST_URL = "https://open.spotify.com/playlist/DEINE_PLAYLIST_ID"
+PLAYLIST_URL = "https://open.spotify.com/playlist/2KYHRYrmA7q3XMQFhIpUi6"
 
 if __name__ == "__main__":
     spotify_download(PLAYLIST_URL)
