@@ -6,7 +6,7 @@ def start_api():
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
             # self.path == "/download?id=abc123"
-            if not self.path.beginswith("/api"):
+            if not self.path.startswith("/api"):
                 self.send_response(301)                 # 302 = temporär, 301 = permanent
                 self.send_header("Location", "https://codetimmy.github.io/MusicMatch")
                 self.end_headers()
