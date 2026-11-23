@@ -1,13 +1,15 @@
 import json
 from spotify_scraper import SpotifyClient
 
-def spotify_download(playlist_url, output_file="playlist_songs.json"):
+def export_playlist_to_json(playlist_url, output_file="playlist_songs.json"):
     with SpotifyClient() as client:
-        # Die Bibliothek holt alle Tracks der Playlist
         playlist = client.get_playlist(playlist_url)
         
-        # Nur die Songnamen extrahieren
-        song_names = [entry.track.name for entry in playlist.tracks]
+        song_names = []
+        for entry in playlist.tracks:
+            track = entry.track
+            artist = track.artists[0].name if track.artists else "Unknown Artist"
+            song_names.append(f"{artist} - {track.name}")
         
         output_data = {"songs": song_names}
         
