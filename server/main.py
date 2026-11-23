@@ -1,7 +1,4 @@
-from _spotify_download import spotify_download
 from _api import start_api
-
-PLAYLIST_URL = "https://open.spotify.com/playlist/2KYHRYrmA7q3XMQFhIpUi6"
 
 if __name__ == "__main__":
     print("Music Match - Server  Copyright (C) 2026  CodeTimmy")
@@ -18,6 +15,5 @@ if __name__ == "__main__":
     print("")
     print("", flush=True)
 
-    spotify_download(PLAYLIST_URL)
     print("▶ starting API", flush=True)
     start_api()
