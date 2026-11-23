@@ -1,9 +1,10 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from _spotify_download import spotify_download
 
 def start_api():
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
-            response = "<Hello Wo"
+            response = spotify_download("https://open.spotify.com/playlist/2KYHRYrmA7q3XMQFhIpUi6")
 
             self.send_response(200)
             self.send_header("Content-Type", "text/plain; charset=utf-8")
