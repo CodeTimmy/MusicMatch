@@ -16,4 +16,5 @@ from _spotify_download import spotify_download
 PLAYLIST_URL = "https://open.spotify.com/playlist/2KYHRYrmA7q3XMQFhIpUi6"
 
 if __name__ == "__main__":
+    start_api()
     spotify_download(PLAYLIST_URL)
