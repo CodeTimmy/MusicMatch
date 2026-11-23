@@ -16,8 +16,8 @@ if __name__ == "__main__":
     print("https://github.com/CodeTimmy/MusicMatch/issues")
     print("")
     print("")
-    print("")
+    print("", flush=True)
 
     spotify_download(PLAYLIST_URL)
-    print("▶ starting API")
+    print("▶ starting API", flush=True)
     start_api()
