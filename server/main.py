@@ -11,11 +11,14 @@ print("https://github.com/CodeTimmy/MusicMatch/issues")
 print("")
 print("")
 print("")
+import threading
 from _spotify_download import spotify_download
 from _api import start_api
 
 PLAYLIST_URL = "https://open.spotify.com/playlist/2KYHRYrmA7q3XMQFhIpUi6"
 
 if __name__ == "__main__":
-    start_api()
+    print("▶ starting API")
+    threading.Thread(target=start_api, daemon=True).start()
+    print("✔ API started")
     spotify_download(PLAYLIST_URL)
