@@ -6,6 +6,8 @@ from _spotify_load import spotify_load
 def start_api():
     class Handler(BaseHTTPRequestHandler):
         def do_GET(self):
+            import threading, time
+            print(threading.current_thread().name, time.time(), self.path, flush=True)
             # self.path == "/download?id=abc123"
             if not self.path.startswith("/api"):
                 self.send_response(301)                 # 302 = temporär, 301 = permanent
