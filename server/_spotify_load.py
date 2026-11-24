@@ -1,4 +1,5 @@
 import json
+import time
 from spotify_scraper import SpotifyClient
 
 def spotify_download(playlist_id: str, self):
@@ -21,6 +22,8 @@ def spotify_download(playlist_id: str, self):
         
         print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
 
+        time.sleep(5) #debug
+        
         response = json.dumps(output_data).encode("utf-8")
 
         self.send_response(200)
