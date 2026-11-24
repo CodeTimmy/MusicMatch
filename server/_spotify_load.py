@@ -1,5 +1,5 @@
 import json
-import time
+from _api import Handler
 from spotify_scraper import SpotifyClient
 
 def spotify_download(playlist_url, output_file="playlist_songs.json"):
