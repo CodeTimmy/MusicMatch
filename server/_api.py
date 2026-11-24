@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 import json
 import threading
-from _spotify_load import spotify_download
+from _spotify_load import spotify_load
 
 def start_api():
     class Handler(BaseHTTPRequestHandler):
