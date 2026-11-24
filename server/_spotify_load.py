@@ -22,7 +22,7 @@ def spotify_load(playlist_id: str, self):
         
         print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
 
-        time.sleep(5) #debug
+        time.sleep(20) #debug
         
         response = json.dumps(output_data).encode("utf-8")
 
