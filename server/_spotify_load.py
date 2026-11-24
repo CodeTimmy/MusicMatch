@@ -2,7 +2,7 @@ import json
 import time
 from spotify_scraper import SpotifyClient
 
-def spotify_download(playlist_id: str, self):
+def spotify_load(playlist_id: str, self):
     with SpotifyClient() as client:
         playlist_url = f"https://open.spotify.com/playlist/{playlist_id}"
         output_file = f"{playlist_id}.json"
