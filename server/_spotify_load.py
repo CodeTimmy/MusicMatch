@@ -4,6 +4,7 @@ from spotify_scraper import SpotifyClient
 def spotify_download(playlist_id: str, self):
     with SpotifyClient() as client:
         playlist_url = f"https://open.spotify.com/playlist/{playlist_id}"
+        output_file = f"{playlist_id}.json"
         
         playlist = client.get_playlist(playlist_url)
         
@@ -15,7 +16,7 @@ def spotify_download(playlist_id: str, self):
         
         output_data = {"songs": song_names}
         
-        with open(playlist_id, 'w', encoding='utf-8') as f:
+        with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=4, ensure_ascii=False)
         
         print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
