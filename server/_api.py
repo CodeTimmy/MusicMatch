@@ -27,15 +27,8 @@ def start_api():
                     self.end_headers()
                     self.wfile.write(b"Missing 'id' parameter")
                     return
-
-                url = f"https://open.spotify.com/playlist/{playlist_id}"
-                response = json.dumps(spotify_download(url)).encode("utf-8")
-
-                self.send_response(200)
-                self.send_header("Content-Type", "application/json")
-                self.send_header("Content-Length", str(len(response)))
-                self.end_headers()
-                self.wfile.write(response)
+                else:
+                    spotify_download(playlist_id, self)
 
         def log_message(self, format, *args):
             pass
