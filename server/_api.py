@@ -1,16 +1,11 @@
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 import json
-import threading, time #debug
 from _spotify_load import spotify_load
 
 def start_api():
     class Handler(BaseHTTPRequestHandler):
-        def setup(self):
-            print(threading.current_thread().name, "setup", time.time(), flush=True) #debug
-            super().setup()
         def do_GET(self):
-            print(threading.current_thread().name, time.time(), self.path, flush=True) #debug
             # self.path == "/download?id=abc123"
             if not self.path.startswith("/api"):
                 self.send_response(301)                 # 302 = temporär, 301 = permanent
