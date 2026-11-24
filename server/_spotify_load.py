@@ -1,7 +1,7 @@
 import json
 from spotify_scraper import SpotifyClient
 
-def spotify_download(playlist_url, self):
+def spotify_download(playlist_id, self):
     with SpotifyClient() as client:
         playlist_url = f"https://open.spotify.com/playlist/{playlist_id}"
         
