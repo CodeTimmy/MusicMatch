@@ -5,6 +5,9 @@ from _spotify_load import spotify_load
 
 def start_api():
     class Handler(BaseHTTPRequestHandler):
+        def setup(self):
+            print(threading.current_thread().name, "setup", time.time(), flush=True)
+            super().setup()
         def do_GET(self):
             import threading, time
             print(threading.current_thread().name, time.time(), self.path, flush=True)
