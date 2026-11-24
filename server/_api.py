@@ -29,7 +29,8 @@ def start_api():
                     self.wfile.write(b"Missing 'id' parameter")
                     return
                 else:
-                    threading.Thread(target=spotify_download, args=(playlist_id, self), daemon=True).start()
+                    spotify_load(playlist_id, self)
+                    #threading.Thread(target=spotify_load, args=(playlist_id, self), daemon=True).start()
 
         def log_message(self, format, *args):
             pass
