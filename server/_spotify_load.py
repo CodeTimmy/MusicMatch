@@ -21,7 +21,7 @@ def spotify_download(playlist_id: str, self):
         
         print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
 
-        response = json.dumps().encode("utf-8")
+        response = json.dumps(output_data).encode("utf-8")
 
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
