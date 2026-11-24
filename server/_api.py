@@ -1,7 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 import json
-import threading
 from _spotify_load import spotify_load
 
 def start_api():
@@ -30,12 +29,11 @@ def start_api():
                     return
                 else:
                     spotify_load(playlist_id, self)
-                    #threading.Thread(target=spotify_load, args=(playlist_id, self), daemon=True).start()
 
         def log_message(self, format, *args):
             pass
     
-    server = HTTPServer(("0.0.0.0", 27021), Handler)
+    server = ThreadingHTTPServer(("0.0.0.0", 27021), Handler)
 
     print("✔ Webserver started", flush=True)
     
