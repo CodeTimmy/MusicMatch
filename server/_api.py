@@ -1,6 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 import json
+import threading
 from _spotify_load import spotify_download
 
 def start_api():
@@ -28,7 +29,7 @@ def start_api():
                     self.wfile.write(b"Missing 'id' parameter")
                     return
                 else:
-                    spotify_download(playlist_id, self)
+                    threading.Thread(target=spotify_download, args=(playlist_id, self), daemon=True).start()
 
         def log_message(self, format, *args):
             pass
