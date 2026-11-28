@@ -5,7 +5,7 @@ from _to_youtube import to_youtube
 def spotify_load(playlist_id: str, self):
     with SpotifyClient() as client:
         playlist_url = f"https://open.spotify.com/playlist/{playlist_id}"
-        output_file = f"{playlist_id}.json"
+        output_file = f"spotify/{playlist_id}.json"
         
         playlist = client.get_playlist(playlist_url)
         
