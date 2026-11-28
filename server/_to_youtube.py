@@ -14,3 +14,4 @@ def to_youtube(file, name):
     output_json = {"ids": output}
     with open(f"youtube/{name}.json", 'w', encoding='utf-8') as f:
         json.dump(output_json, f, indent=4, ensure_ascii=False)
+    return output_json
