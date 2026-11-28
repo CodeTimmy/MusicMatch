@@ -1,5 +1,6 @@
 import json
 from spotify_scraper import SpotifyClient
+from _to_youtube import to_youtube
 
 def spotify_load(playlist_id: str, self):
     with SpotifyClient() as client:
@@ -20,8 +21,10 @@ def spotify_load(playlist_id: str, self):
             json.dump(output_data, f, indent=4, ensure_ascii=False)
         
         print(f"✔ {len(song_names)} Songs in '{output_file}' gespeichert.", flush=True)
+
+        converted_data = output_json(output_file, playlist_id)
         
-        response = json.dumps(output_data).encode("utf-8")
+        response = json.dumps(converted_data).encode("utf-8")
 
         self.send_response(200)
         self.send_header("Content-Type", "application/json")
